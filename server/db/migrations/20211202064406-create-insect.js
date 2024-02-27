@@ -1,12 +1,12 @@
-'use strict';
+"use strict";
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('Insects', {
+    await queryInterface.createTable("Insects", {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       name: {
         type: Sequelize.STRING,
@@ -15,13 +15,13 @@ module.exports = {
         unique: true,
       },
       description: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       fact: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       territory: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       millimeters: {
         type: Sequelize.FLOAT,
@@ -30,16 +30,16 @@ module.exports = {
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
-        defaultValue: Sequelize.literal("CURRENT_TIMESTAMP")
+        defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
       },
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE,
-        defaultValue: Sequelize.literal("CURRENT_TIMESTAMP")
-      }
+        defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
+      },
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('Insects');
-  }
+    await queryInterface.dropTable("Insects");
+  },
 };
